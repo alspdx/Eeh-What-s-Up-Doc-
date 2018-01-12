@@ -5,16 +5,18 @@ $(document).ready(function() {
   $('#doctor-finder').submit(function(e) {
     e.preventDefault();
     const userLocation = $('#user-location').val();
-    const foundDoctors = doctorFinder(userLocation);
+    const userDoctorName = encodeURIComponent($('#doctor-name').val());
+    const foundDoctors = doctorFinder(userLocation, userDoctorName);
 
     foundDoctors.then(function(response) {
+      $('.output').empty();
       const searchResults = JSON.parse(response);
       console.log(searchResults.data);
       searchResults.data.map(function(doctor) {
-        $('.output-success').append(`<div>${doctor.profile.first_name}</div>`)
+        $('.output').append(`<div>${doctor.profile.first_name} ${doctor.profile.last_name}</div>`);
       });
     }, function(error) {
-      $('.output-error').text(`There was an error processing your request: ${error.message}`);
+      $('.output').html(`<span>There was an error processing your request: ${error.message}</span>`);
     });
   });
 });
