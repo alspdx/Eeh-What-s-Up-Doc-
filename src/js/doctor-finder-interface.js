@@ -1,6 +1,5 @@
 import { doctorFinder } from './../src/js/doctor-finder.js';
 
-
 $(document).ready(function() {
 
   $('#doctor-finder').submit(function(e) {
@@ -9,10 +8,13 @@ $(document).ready(function() {
     const foundDoctors = doctorFinder(userLocation);
 
     foundDoctors.then(function(response) {
-      console.log(response);
+      const searchResults = JSON.parse(response);
+      console.log(searchResults.data);
+      searchResults.data.map(function(doctor) {
+        $('.output-success').append(`<div>${doctor.profile.first_name}</div>`)
+      });
     }, function(error) {
-      Error(`There was an error processing your request: ${error.message}`);
+      $('.output-error').text(`There was an error processing your request: ${error.message}`);
     });
   });
-
 });
