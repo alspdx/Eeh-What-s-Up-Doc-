@@ -9,14 +9,27 @@ $(document).ready(function() {
     const userConditions = encodeURIComponent($('#user-conditions').val());
     const foundDoctors = doctorFinder(userLocation, userDoctorName, userConditions);
 
-
     foundDoctors.then(function(response) {
       $('.output').empty();
       const searchResults = JSON.parse(response);
-      console.log(searchResults.data);
 
       searchResults.data.map(function(doctor) {
-        $('.output').append(`<div>${doctor.profile.first_name} ${doctor.profile.last_name}</div>`);
+        const doctorNameOutputHTML = `<div>${doctor.profile.first_name} ${doctor.profile.last_name}</div>`;
+        const practiceAddressesHTML = [];
+        let doctorWebsite = '';
+
+        practiceAddressesHTML.push(`<div>
+                                      <span>${doctor.practices[0].name}</span>
+                                      <span>${doctor.practices[0].visit_address.street}</span>
+                                      <span>${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state} ${doctor.practices[0].visit_address.zip}</span>
+                                    </div>`
+        );
+
+        if (doctor.practices[0].website) {
+          doctorWebsite = `<span>${doctor.practices[0].website}</span>`;
+        }
+
+        $('.output').append(`<div>${doctorNameOutputHTML}${practiceAddressesHTML.join('')}${doctorWebsite}</div>`);
       });
     }, function(error) {
       $('.output').html(`<span>There was an error processing your request: ${error.message}</span>`);
