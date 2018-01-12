@@ -1,8 +1,8 @@
 import { urlSlugBuilder } from './url-slug-builder.js';
 import { apiKey } from './../../.env';
 
-export function doctorFinder(userLocation, userDoctorName) {
-  const slug = urlSlugBuilder(userLocation, userDoctorName, apiKey);
+export function doctorFinder(userLocation, userDoctorName, userConditions) {
+  const slug = urlSlugBuilder(userLocation, userDoctorName, userConditions, apiKey);
   console.log(slug);
 
   return new Promise(function(resolve, reject) {

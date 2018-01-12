@@ -1,6 +1,7 @@
-export function urlSlugBuilder(_userLocation, _userDoctorName, _apiKey) {
+export function urlSlugBuilder(_userLocation, _userDoctorName, _userConditions, _apiKey) {
   const userSearchInput = [].slice.call(arguments);
-  const urlSlugOptions = ['location=', 'name=', 'user_key='];
+  console.log(userSearchInput);
+  const urlSlugOptions = ['location=', 'name=', 'query=', 'user_key='];
   let urlSlugOutput = [];
   let i = 0;
   userSearchInput.map(function(searchOption) {
