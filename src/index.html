@@ -8,6 +8,23 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-
+    <form id="doctor-finder">
+      <h1>Eeh... What's up, Doc?</h1>
+      <fieldset>
+        <legend>Where ya from?</legend>
+        <select id="user-location">
+          <option disabled selected value> -- Select an option -- </option>
+          <option value="or-portland">Portland, OR</option>
+          <option value="wa-seattle">Seattle, WA</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Who ya lookin' for?</legend>
+        <input type="text" id="doctor-name">
+      </fieldset>
+      <button type="submit" name="button">Search!</button>
+    </form>
+    <div class="output">
+    </div>
   </body>
 </html>
