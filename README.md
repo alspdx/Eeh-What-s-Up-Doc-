@@ -6,9 +6,7 @@
 
 ## Description
 
-This application will allow users to input a medical issue and get a list of doctors that provide needed services.
-
-## Specifications
+This application will allow users to input a medical issue and get a list of doctors that provide needed services. The user can input a location of Seattle or Portland, a condition, a doctor's name, or any combination of these options. The application will return a list of doctors with their names, practice address, phone number, and if it is available, a website. 
 
 ## Setup
 
