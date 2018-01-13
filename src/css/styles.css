@@ -1,0 +1,26 @@
+body {
+  background: #5e92e5;
+  color: white;
+}
+
+button {
+  margin: 10px 0;
+}
+
+.doctor-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: black;
+  margin: 10px;
+}
+
+.doctor-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.doctor-address {
+  display: flex;
+  flex-direction: column;
+}

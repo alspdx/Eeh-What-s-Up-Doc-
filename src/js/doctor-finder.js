@@ -3,12 +3,10 @@ import { apiKey } from './../../.env';
 
 export function doctorFinder(userLocation, userDoctorName, userConditions) {
   const slug = urlSlugBuilder(userLocation, userDoctorName, userConditions, apiKey);
-  console.log(slug);
 
   return new Promise(function(resolve, reject) {
     const request = new XMLHttpRequest();
     const url = `https://api.betterdoctor.com/2016-03-01/doctors?${slug}`;
-    console.log(url);
     request.onload = function() {
       if (this.status === 200) {
         resolve(request.response);
