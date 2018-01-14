@@ -6,7 +6,7 @@
 
 ## Description
 
-This application will allow users to input a medical issue and get a list of doctors that provide needed services. The user can input a location of Seattle or Portland, a condition, a doctor's name, or any combination of these options. The application will return a list of doctors with their names, practice address, phone number, and if it is available, a website. 
+This application will allow users to input a medical issue and get a list of doctors that provide needed services. The user can input a location of Seattle or Portland, a condition, a doctor's name, or any combination of these options. The application will return a list of doctors with their names, practice address, phone number, and if it is available, a website.
 
 ## Setup
 
@@ -22,6 +22,16 @@ This application will allow users to input a medical issue and get a list of doc
   $ gulp build
   $ gulp serve
   ```
+## API Authorization
+
+  1. Visit the [BetterDoctor API](https://developer.betterdoctor.com/) website.
+  2. Sign up for a free account and sign in.
+  3. Navigate to the "My Account" tab in the navigation bar and click the "Applications" link.
+  4. Click the "Create New App" button and get a new API authorization key.
+  5. Create a new file in the top level of the project with the name ".env".
+  6. Finally add the following export statement to the file with your API key in the quotes. The key is already linked to an import statement in the application files so no other steps are necessary.
+
+    `exports.apiKey = "--yourApiKeyHere--";`
 
 ## Technologies Used:
 * JavaScript
@@ -33,7 +43,7 @@ This application will allow users to input a medical issue and get a list of doc
 * Babel
 * Jasmine
 * Karma
-
+* BetterDoctor API
 
 ## License
 

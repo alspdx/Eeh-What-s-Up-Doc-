@@ -19,18 +19,18 @@ $(document).ready(function() {
           const acceptsNewPatients = `<span>This doctor is ${(doctor.practices[0].accepts_new_patients ? `` : `not `)}accepting new patients`;
           const doctorWebsite = (doctor.practices[0].website ? `<span>${doctor.practices[0].website}</span>` : ``);
           const practiceAddressesHTML =`<div class="doctor-address">
-          <span>${doctor.practices[0].name}</span>
-          <span>${doctor.practices[0].visit_address.street}</span>
-          <span>${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state} ${doctor.practices[0].visit_address.zip}</span>
-          <span>${doctor.practices[0].phones[0].number}</span>
-          </div>`;
+                                          <span>${doctor.practices[0].name}</span>
+                                          <span>${doctor.practices[0].visit_address.street}</span>
+                                          <span>${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state} ${doctor.practices[0].visit_address.zip}</span>
+                                          <span>${doctor.practices[0].phones[0].number}</span>
+                                        </div>`;
 
           $('.output').append(`<div class="doctor-container">
-          ${doctorNameOutputHTML}
-          ${practiceAddressesHTML}
-          ${doctorWebsite}
-          ${acceptsNewPatients}
-          </div>`);
+                                ${doctorNameOutputHTML}
+                                ${practiceAddressesHTML}
+                                ${doctorWebsite}
+                                ${acceptsNewPatients}
+                              </div>`);
         });
       } else {
         $('.output').empty().append(`<span>Your search sucked and did not return any results. Do better next time.</span>`)
