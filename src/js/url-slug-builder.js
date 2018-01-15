@@ -2,7 +2,7 @@ import { apiKey } from './../../.env';
 
 export function urlSlugBuilder(userInput) {
   userInput.push(apiKey);
-  const urlSlugOptions = ['location=', 'name=', 'query=', 'user_key='];
+  const urlSlugOptions = ['location=', 'name=', 'query=', 'limit=', 'user_key='];
   const urlSlugOutput = [];
   userInput.map(function(searchOption, i) {
     if (searchOption) {
